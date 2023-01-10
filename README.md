@@ -8,7 +8,7 @@
 * Gõ lệnh `npm install -g npm@latest` install npm bản mới nhất
 
 # Bước 2: Clone Project về máy  
-* Dùng câu lệnh `` để clone project về máy
+* Dùng câu lệnh `git clone https://github.com/nhahoang199/Project-1.git` để clone project về máy
 
 # Bước 3: Tải các package cần thiết 
 * Dùng `npm i` để tải các package được yêu cầu ( Chạy xong bước này chuyển xuống luôn bước 4 khởi chạy project. Nếu chạy project mà gặp lỗi thì quay lại bước này thực hiện các ý ở dưới)
