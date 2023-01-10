@@ -1,0 +1,20 @@
+.form-add__item {
+    width: 330px;
+    height: 80px;
+    margin-bottom: 32px;
+    margin-right: 40px;
+    &__title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    &__input {
+        height: 40px;
+        width: 100%;
+        border: 1px solid #f0f0f0;
+        border-radius: 5px;
+        padding-left: 12px;
+        &::placeholder {
+            color: #999999;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.search {
+    // display: none;
+    width: 100%;
+    height: 100%;
+    &__wrap {
+        position: absolute;
+        width: 722px;
+        height: auto;
+        left: 203px;
+        top: 74px;
+        background: #ffffff;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 32px 0 0 28px;
+        &__title {
+            font-size: 28px;
+            color: #000000;
+            margin-bottom: 16px;
+        }
+        &__bar {
+            position: absolute;
+            width: 5px;
+            height: 100px;
+            top: 20px;
+            left: 76px;
+            // bottom: -16px;
+
+            background: linear-gradient(180deg, #64c5b1 0%, #ffffff 100%);
+            border-radius: 5px;
+            transform: rotate(-90deg);
+        }
+        &__box {
+            width: 690px;
+            height: 40px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            margin-bottom: 28px;
+            position: relative;
+            &__icon {
+                margin-left: 16px;
+                position: absolute;
+                font-size: 16px;
+                color: rgba(97, 97, 97, 0.78);
+            }
+            &__input {
+                width: 638px;
+                height: 36px;
+                border: 1px solid #f0f0f0;
+                border-radius: 5px;
+                padding-left: 48px;
+                &::placeholder {
+                    font-size: 14px;
+                    color: #999999;
+                }
+                &:focus {
+                    outline-color: #4ac49a;
+                }
+            }
+            &__clear{
+                right: 16px;
+                position: absolute;
+                font-size: 16px;
+                color: rgba(97, 97, 97, 0.49);
+                cursor: pointer;
+            }
+            &__loading{
+                right: 16px;
+                position: absolute;
+                font-size: 16px;
+                color: rgba(97, 97, 97, 0.49);
+            }
+        }
+        .result__items {
+            // display: none;
+            width: calc(100% - 32px);
+            height: 100%;
+            margin-bottom: 36px;
+        }
+        
+    }
+}

@@ -1,0 +1,14 @@
+.not-found {
+    display: flex;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 690px;
+    height: 128px;
+    font-size: 40px;
+    &__icon {
+        color: #f29b30;
+        width: 110px;
+    }
+}

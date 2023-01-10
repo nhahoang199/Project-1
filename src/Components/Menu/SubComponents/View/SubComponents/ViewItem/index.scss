@@ -1,0 +1,25 @@
+.view__item {
+    height: 40px;
+    display: grid;
+    grid-template-columns: 50px 120px 230px 360px 150px;
+    align-items: center;
+    border-bottom: 2px solid rgba(204, 204, 204, 0.3);
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba($color: #e4e6e8, $alpha: 0.3);
+    }
+    &__desc {
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 1; /* number of lines to show */
+        // line-clamp: 1;
+        // -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        padding-right: 8px;
+    }
+}

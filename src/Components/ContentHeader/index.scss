@@ -1,0 +1,26 @@
+.content-header {
+    height: 210px;
+    background-color: #64c5b1;
+    position: relative;
+    mix-blend-mode: normal;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    &__title {
+        position: absolute;
+        height: 80px;
+        left: 67px;
+        top: 37px;
+        font-size: 48px;
+        line-height: 72px;
+        color: #ffffff;
+    }
+    &__bar {
+        position: absolute;
+        width: 5px;
+        height: 175px;
+        left: 152px;
+        bottom: 8px;
+        background: linear-gradient(180deg, #ffefba 0%, #ffffff 100%);
+        border-radius: 5px;
+        transform: rotate(-90deg);
+    }
+}

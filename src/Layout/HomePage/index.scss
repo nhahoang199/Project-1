@@ -1,0 +1,110 @@
+.homepage {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../public/images/landing_page_bg.2ef74fc87402ba954638.png");
+    background-color: #191d1e;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    &__button {
+        transform: translateY(160px);
+        &__admin {
+            background-image: linear-gradient(
+                to right,
+                #c04848 0%,
+                #480048 51%,
+                #c04848 100%
+            );
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            width: 250px;
+            height: 70px;
+            font-size: 28px;
+            display: flex;
+            cursor: pointer;
+            margin-bottom: 50px;
+            &:hover {
+                background-position: right center; /* change the direction of the change here */
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+        &__user {
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            width: 250px;
+            height: 70px;
+            font-size: 28px;
+            display: flex;
+            background-image: linear-gradient(
+                to right,
+                #1d2b64 0%,
+                #f8cdda 51%,
+                #1d2b64 100%
+            );
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            text-decoration: none;
+            &:hover {
+                background-position: right center; /* change the direction of the change here */
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__decor {
+        position: absolute;
+    }
+    &__decor--1 {
+        left: 0;
+        bottom: 0;
+        width: 400px;
+    }
+    &__decor--2 {
+        right: 0;
+        top: 0;
+    }
+    &__logo {
+        position: absolute;
+        top: 40px;
+        height: 400px;
+        pointer-events: none;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .homepage__logo {
+        animation: App-logo-spin infinite 15s linear;
+    }
+}
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
