@@ -12,6 +12,7 @@
     }
     &__items {
         .nav__item {
+            text-decoration: none;
             width: calc(100% - 40px);
             display: flex;
             flex-direction: row;

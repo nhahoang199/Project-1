@@ -7,12 +7,12 @@ import {
     faUser,
     faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
-export default function Header() {
+export default function Header(props: any) {
     return (
         <div className="header">
             <div className="header-menu">
                 <FontAwesomeIcon className="header-menu__icon" icon={faBars} />
-                <div className="header-menu__title">Admin</div>
+                <div className="header-menu__title">{props.isAdmin ? "Admin" : "User"}</div>
             </div>
             <div className="header-search">
                 <FontAwesomeIcon

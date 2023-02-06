@@ -11,7 +11,7 @@ export default function FormAdd(props: any) {
         e.preventDefault();
     };
     return (
-        <div className="add" style={props.id === 2 ? { display: "block" } : {}}>
+        <div className="add" >
             <form className="form-add">
                 <div className="form-add__title">Thêm mới</div>
                 <div className="form-add__bar"></div>

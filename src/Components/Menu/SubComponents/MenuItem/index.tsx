@@ -6,7 +6,7 @@ import "./index.scss";
 export default function MenuItem(props: any) {
     
     return (
-        <Link to = {props.item.route}
+        <Link to =  {props.isUser ? props.item.userRoute : props.item.route}
             className="menu__item"
             style={{ borderLeftColor: props.item.color }}
             // onClick = {() => props.onClick(props.item.id)}

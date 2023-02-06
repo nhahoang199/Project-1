@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AdminRoutes, HomeRoutes, UserRoutes } from "./Routes";
-import { AdminLayout } from "./Layout";
+import { AdminLayout, UserLayout } from "./Layout";
 
 function App() {
     return (
@@ -34,7 +34,7 @@ function App() {
                             <Route
                                 key={index}
                                 path={route.path}
-                                element={<Page />}
+                                element={<UserLayout Page={Page} />}
                             />
                         );
                     })}

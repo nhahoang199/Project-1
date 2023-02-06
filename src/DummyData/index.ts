@@ -10,20 +10,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 const NavData = [
     {
+        id: 1,   
         icon: faBookOpen,
         title: "Môn học",
+        path: "/admin/subject",
+        userPath: "/user/subject",
     },
     {
+        id: 2,   
         icon: faBookmark,
         title: "Chương",
+        // path: "/admin/subject",
     },
     {
+        id: 3,   
         icon: faBookOpenReader,
         title: "Đề thi",
+        path: "/admin/exam",
+        userPath: "/user/exam",
     },
     {
+        id: 4,   
         icon: faQuestion,
         title: "Câu hỏi",
+        // path: "/admin/subject",
     },
 ];
 
@@ -34,7 +44,8 @@ const MenuData = [
         title: "Xem",
         description: "Xem danh sách môn học",
         icon: faEye,
-        route: "/admin/subject/getAll"
+        route: "/admin/subject/getAll",
+        userRoute: "/user/exam/getAll"
     },
     {
         id: 2,
@@ -42,7 +53,8 @@ const MenuData = [
         title: "Thêm",
         description: "Thêm mới một môn học",
         icon: faPlus,
-        route: "/admin/subject/add"
+        route: "/admin/subject/add",
+        userRoute: "/user/exam/add"
     },
     {
         id: 3,
@@ -50,7 +62,8 @@ const MenuData = [
         title: "Sửa",
         description: "Sửa thông tin môn học",
         icon: faPen,
-        route: "/admin/subject/search/update"
+        route: "/admin/subject/search/update",
+        userRoute: ""
     },
     {
         id: 4,
@@ -58,7 +71,8 @@ const MenuData = [
         title: "Xóa",
         description: "Xóa môn học khỏi danh sách",
         icon: faEraser,
-        route: "/admin/subject/search/delete"
+        route: "/admin/subject/search/delete",
+        userRoute: ""
     },
 ];
 

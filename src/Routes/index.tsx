@@ -1,7 +1,13 @@
 import Menu from "../Components/Menu";
 import { HomePage, UserLayout } from "../Layout";
-import { FormAdd, Update, Search, View } from "../Components/Menu/SubComponents";
-
+import {
+    FormAdd,
+    Update,
+    Search,
+    View,
+    FormExam
+} from "../Components/Menu/SubComponents";
+import ExamList from "../Components/Menu/SubComponents/ExamList";
 const AdminRoutes = [
     {
         path: "/admin/subject",
@@ -32,8 +38,20 @@ const HomeRoutes = [
 ];
 const UserRoutes = [
     {
-        path: "/user",
-        component: UserLayout,
+        path: "/user/subject",
+        component: Menu,
+    },
+    {
+        path: "/user/exam",
+        component: Menu,
+    },
+    {
+        path: "/user/exam/getAll",
+        component: ExamList,
+    },
+    {
+        path: "/user/exam/add",
+        component: FormExam,
     },
 ];
 

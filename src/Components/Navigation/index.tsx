@@ -7,9 +7,18 @@ import {
     faChevronDown,
     faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { NavItem } from "./SubComponents";
 
-export default function Navigation() {
-    const [navData, setNavData] = useState(NavData);
+export default function Navigation(props: any) {
+    let Nav;
+    if (props.isUser) {
+        Nav = NavData.filter((item) => {
+            return item.id  === 3;
+        });
+    } else {
+        Nav = NavData;
+    }
+    const [navData, setNavData] = useState(Nav);
     const [isActive, setIsActive] = useState(0);
     return (
         <div className="nav">
@@ -17,34 +26,14 @@ export default function Navigation() {
             <div className="nav__items">
                 {navData.map((item, index) => {
                     return (
-                        <div
-                            className="nav__item"
+                        <NavItem
+                            item={item}
                             key={index}
-                            style={
-                                isActive === index
-                                    ? { background: "#d1eee8" }
-                                    : {}
-                            }
-                        >
-                            <FontAwesomeIcon
-                                className="nav__item__icon"
-                                icon={item.icon}
-                            />
-                            <div className="nav__item__title">{item.title}</div>
-                            <FontAwesomeIcon
-                                className="nav__item__arrow"
-                                icon={
-                                    isActive === index
-                                        ? faChevronRight
-                                        : faChevronDown
-                                }
-                                style={
-                                    isActive === index
-                                        ? { color: "#212121" }
-                                        : {}
-                                }
-                            />
-                        </div>
+                            index={index}
+                            isActive={isActive}
+                            isUser={props.isUser}
+                            isAdmin={props.isAdmin}
+                        />
                     );
                 })}
             </div>
