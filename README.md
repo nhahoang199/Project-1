@@ -25,5 +25,5 @@ npm i --save @fortawesome/pro-duotone-svg-icons
 để tải các package fontawesome
 * Dùng `npm i sass` để tải Sass/Scss cho project
 
-#Bước 4: Chạy Project
+# Bước 4: Chạy Project
 *Gõ `npm run dev` để chạy ứng dụng  
