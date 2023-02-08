@@ -26,4 +26,4 @@ npm i --save @fortawesome/pro-duotone-svg-icons
 * Dùng `npm i sass` để tải Sass/Scss cho project
 
 #Bước 4: Chạy Project
-*Gõ `npm start` để chạy ứng dụng react 
+*Gõ `npm run dev` để chạy ứng dụng  

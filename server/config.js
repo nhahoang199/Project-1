@@ -29,6 +29,7 @@ module.exports = {
         database: SQL_DATABASE,
         user: SQL_USER,
         password: SQL_PASSWORD,
+        port: 1433,
         options: {
             encrypt: sqlEncrypt,
             enableArithAbort: true,
