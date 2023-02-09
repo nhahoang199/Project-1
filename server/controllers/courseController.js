@@ -1,6 +1,6 @@
 "use strict";
 
-const courseService = require("./../services/courseServices");
+const courseService = require("../services/courseServices.js");
 
 const getCourses = async (req, res, next) => {
     try {
@@ -11,6 +11,16 @@ const getCourses = async (req, res, next) => {
     }
 };
 
+const getCourseById = async (req, res, next) => {
+    try {
+        const courseId = req.params.id;
+        const course = await courseService.getCourseById(courseId);
+        res.send(course);
+    } catch (err) {
+        res.status(400).send(err.message);
+    }
+};
 module.exports = {
     getCourses,
+    getCourseById,
 };
