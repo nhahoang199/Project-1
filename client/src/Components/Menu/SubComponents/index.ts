@@ -4,4 +4,17 @@ import Update from "./Update";
 import MenuItem from "./MenuItem";
 import View from "./View";
 import FormExam from "./FormCreateExam";
-export { FormAdd, Search, Update, MenuItem, View, FormExam };
+import ExamQuestion from "./ExamQuestion";
+import ExamModal from "./ViewOnCreateSuccess";
+import QuestionInfo from "./QuestionInfo";
+export {
+    FormAdd,
+    Search,
+    Update,
+    MenuItem,
+    View,
+    FormExam,
+    ExamQuestion,
+    ExamModal,
+    QuestionInfo
+};

@@ -31,7 +31,23 @@ const getChapterById = async (chapterId) => {
     }
 };
 
+const getChapterByCourseId = async (courseId) => {
+    try {
+        const pool = await sql.connect(config.sql);
+        const sqlQueries = await utils.loadSqlQueries("chapters");
+        const chapter = await pool
+            .request()
+            .input("courseId", sql.Int, courseId)
+            .query(sqlQueries.chaptersByCourseId);
+        return chapter.recordset;
+    } catch (err) {
+        console.log(err);
+        return err.message;
+    }
+};
+
 module.exports = {
     getChapters,
     getChapterById,
+    getChapterByCourseId,
 };

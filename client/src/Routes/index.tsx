@@ -5,7 +5,10 @@ import {
     Update,
     Search,
     View,
-    FormExam
+    FormExam,
+    ExamQuestion,
+    ExamModal,
+    QuestionInfo
 } from "../Components/Menu/SubComponents";
 import ExamList from "../Components/Menu/SubComponents/ExamList";
 const AdminRoutes = [
@@ -38,7 +41,7 @@ const HomeRoutes = [
 ];
 const UserRoutes = [
     {
-        path: "/user/subject",
+        path: "/user/exam",
         component: Menu,
     },
     {
@@ -53,6 +56,19 @@ const UserRoutes = [
         path: "/user/exam/add",
         component: FormExam,
     },
+    {
+        path: "/user/examQuetions/:id",
+        component: ExamQuestion,
+    },
+    {
+        path: "/user/exam/add/:id",
+        component: ExamModal,
+    },
+    {
+        path: "/user/question/:id",
+        component: QuestionInfo,
+    },
+
 ];
 
 export { AdminRoutes, HomeRoutes, UserRoutes };

@@ -10,7 +10,7 @@ export default function HomePage() {
                 <Link to="/admin/subject" className="homepage__button__admin">
                     Admin
                 </Link>
-                <Link to="/user/subject" className="homepage__button__user">
+                <Link to="/user/exam" className="homepage__button__user">
                     User
                 </Link>
             </div>

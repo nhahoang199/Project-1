@@ -1,13 +1,29 @@
 import "./index.scss";
 
 import { ButtonBack } from "../Common";
-import { useState } from "react";
-import { SubjectData } from "../../../../DummyData";
-// import { ViewItem } from "./SubComponents";
+import { useEffect, useState } from "react";
+import { ExamData } from "../../../../DummyData";
+import { ExamItem } from "./SubComponents";
+import callAPI from "../../../../Services/api";
+import { AxiosResponse } from "axios";
 
 export default function ExamList(props: any) {
-    const [data, setData] = useState(SubjectData);
     const [isUpdate, setIsUpdate] = useState();
+    const [data, setData] = useState([]);
+
+    const getExamData = async (endpoint: string, method: string) => {
+        try {
+            await callAPI(endpoint, method).then((response: any) => {
+                setData(response.data);
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    useEffect(() => {
+        getExamData("examsWithCourseName", "GET");
+    }, []);
     return (
         <div className="examlist__wrap">
             <div className="examlist">
@@ -25,18 +41,21 @@ export default function ExamList(props: any) {
                     </div>
                 </div>
                 <div className="examlist__items">
-                    {/* {data.map((item, index) => {
+                    {data.map((item, index) => {
                         return (
-                            <ViewItem
+                            <ExamItem
                                 item={item}
                                 key={index}
                                 // onClick={() => props.onClick(props.subject)}
                             />
                         );
-                    })} */}
+                    })}
                 </div>
             </div>
-            <ButtonBack />
+            <div className="examlist__button">
+                <ButtonBack />
+            </div>
         </div>
     );
 }
+

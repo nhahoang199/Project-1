@@ -6,16 +6,16 @@ import { SubjectItem, ChapterItem, UpdateButton } from "./SubComponents";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { ButtonBack } from "../Common";
-import { IChapter } from "../../../../Models/Model";
+import { IChapter } from "../../../../Models";
 import "./index.scss";
 
 export default function Update(props: any) {
     const [chapterData, setChapterData] = useState(ChapterData);
     const [subjectData, setSubjectData] = useState(SubjectData);
     const subject = subjectData[Number(useParams().id) - 1];
-    const route = "/admin/subject/getAll"
+    const route = "/admin/subject/getAll";
     console.log(Number(useParams().id));
-    console.log(subject)
+    console.log(subject);
     const SubjectInfo = [
         {
             title: "ID",

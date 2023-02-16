@@ -1,0 +1,196 @@
+.exams-questions-wrap {
+    width: 100%;
+    height: 100%;
+    padding-left: 140px;
+    padding-top: 74px;
+    .exam-questions {
+        // display: none;
+        width: 942px;
+        height: auto;
+        // position: absolute;
+        // left: 140px;
+        // top: 74px;
+        background: #ffffff;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-bottom: 68px;
+        &__header {
+            border-bottom: 5px solid #3fbf77;
+            // border-radius: 2px;
+            padding: 32px 28px 0px;
+            background: rgba(100, 197, 177, 0.3);
+            backdrop-filter: blur(2px);
+            &__top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 28px;
+                &__title {
+                    font-weight: 400;
+                    font-size: 20px;
+                    width: 300px;
+                    height: 80px;
+                    &__ministry {
+                        width: 100%;
+                        height: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    &__school {
+                        display: flex;
+                        width: 100%;
+                        height: 50%;
+                        justify-content: center;
+                    }
+                }
+                &__exam-info {
+                    display: grid;
+                    width: 500px;
+                    height: 80px;
+                    grid-template-columns: 60% 40%;
+                    grid-template-rows: 50% 50%;
+                    font-size: 20px;
+                    &__course {
+                        display: flex;
+                        align-items: center;
+                    }
+                    &__type {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+            &__bot {
+                height: 40px;
+                &__code {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+        }
+        &__content {
+            width: 100%;
+            padding: 24px 0;
+            &__items {
+                width: 100%;
+            }
+            &__item {
+                display: flex;
+                flex-direction: column;
+                padding: 0 28px;
+                margin-bottom: 12px;
+                text-decoration: none;
+                color: #000;
+                &:hover{
+                    cursor: pointer;
+                    background: #a8f6ca;
+                }
+                &__question {
+                    line-height: 24px;
+                }
+                &__answers {
+                    height: 40px;
+                    display: grid;
+                    grid-template-columns: 25% 25% 25% 25%;
+                    align-items: center;
+                    .exam-questions__content__item__answer__A {
+                        display: flex;
+                        align-items: center;
+
+                        &__input {
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
+                        &__checkmark {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 25px;
+                            width: 25px;
+                            background-color: #eee;
+                            border-radius: 50%;
+                        }
+                    }
+                    .exam-questions__content__item__answer__B {
+                        display: flex;
+                        align-items: center;
+                    }
+                    .exam-questions__content__item__answer__C {
+                        display: flex;
+                        align-items: center;
+                    }
+                    .exam-questions__content__item__answer__D {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+            .label__container {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            /* Hide the browser's default radio button */
+            .label__container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            /* Create a custom radio button */
+            .answer-checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                background-color: #ddd;
+                border-radius: 50%;
+            }
+
+            /* On mouse-over, add a grey background color */
+            .label__container:hover input ~ .answer-checkmark {
+                background-color: #ccc;
+            }
+
+            /* When the radio button is checked, add a blue background */
+            .label__container input:checked ~ .answer-checkmark {
+                background-color: #3fbf77;
+            }
+
+            /* Create the indicator (the dot/circle - hidden when not checked) */
+            .answer-checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            /* Show the indicator (dot/circle) when checked */
+            .label__container input:checked ~ .answer-checkmark:after {
+                display: block;
+            }
+
+            /* Style the indicator (dot/circle) */
+            .label__container .answer-checkmark:after {
+                top: 9px;
+                left: 9px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: white;
+            }
+        }
+    }
+    .exams-questions-button {
+        height: 100px;
+        position: relative;
+    }
+}

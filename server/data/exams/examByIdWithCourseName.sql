@@ -1,0 +1,10 @@
+SELECT [Exam].[Id]
+	  ,[Course].[CourseName]
+      ,[ExamName]
+      ,[ExamType]
+      ,[DayCreate]
+      ,[Author]
+      ,[Reviewer]
+FROM [System_Create_Exam].[dbo].[Exam]
+Inner JOIN [Course] ON [Exam].[CourseId] = [Course].[Id]
+Where[Exam].[Id]= @examId

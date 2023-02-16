@@ -31,9 +31,51 @@ const getExamById = async (examId) => {
     }
 };
 
-const createExam = async (
-    examData
-) => {
+const getExamInfo = async (examId) => {
+    try {
+        const pool = await sql.connect(config.sql);
+        const sqlQueries = await utils.loadSqlQueries("exams");
+        const exam = await pool
+            .request()
+            .input("examId", sql.Int, examId)
+            .query(sqlQueries.examInfo);
+        return exam.recordset[0];
+    } catch (err) {
+        console.log(err);
+        return err.message;
+    }
+};
+
+const getExamsWithCourseName = async () => {
+    try {
+        const pool = await sql.connect(config.sql);
+        const sqlQueries = await utils.loadSqlQueries("exams");
+        const list = await pool
+            .request()
+            .query(sqlQueries.examsListWithCourseName);
+        return list.recordset;
+    } catch (err) {
+        console.log(err);
+        return err.message;
+    }
+};
+
+const getExamWithCourseNameById = async (examId) => {
+    try {
+        const pool = await sql.connect(config.sql);
+        const sqlQueries = await utils.loadSqlQueries("exams");
+        const exam = await pool
+            .request()
+            .input("examId", sql.Int, examId)
+            .query(sqlQueries.examByIdWithCourseName);
+        return exam.recordset[0];
+    } catch (err) {
+        console.log(err);
+        return err.message;
+    }
+};
+
+const createExam = async (examData) => {
     try {
         const pool = await sql.connect(config.sql);
         const sqlQueries = await utils.loadSqlQueries("exams");
@@ -56,5 +98,8 @@ const createExam = async (
 module.exports = {
     getExams,
     getExamById,
-    createExam
+    createExam,
+    getExamsWithCourseName,
+    getExamInfo,
+    getExamWithCourseNameById,
 };

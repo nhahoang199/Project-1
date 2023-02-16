@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./index.scss";
 import { useState } from "react";
-import { MenuData, SubjectData } from "../../DummyData";
+import { MenuData, SubjectData, UserMenu } from "../../DummyData";
 import { FormAdd, MenuItem, Update, Search, View } from "./SubComponents";
 import { ButtonBack } from "./SubComponents/Common";
 
@@ -10,7 +10,7 @@ export default function Menu(props: any) {
     console.log("admin:" + props.isAdmin);
     let Menu;
     if (props.isUser) {
-        Menu = MenuData.slice(0, 2);
+        Menu = UserMenu;
     } else {
         Menu = MenuData;
     }
