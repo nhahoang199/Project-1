@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./index.scss";
 
@@ -8,7 +7,6 @@ export default function ViewItem(props: any) {
         <Link
             to= {route}
             className="view__item"
-            //  onClick={() => props.onClick(props.item)}
         >
             <div className="view__item__id">{props.item.id}</div>
             <div className="view__item__code">{props.item.code}</div>

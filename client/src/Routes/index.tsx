@@ -8,7 +8,8 @@ import {
     FormExam,
     ExamQuestion,
     ExamModal,
-    QuestionInfo
+    QuestionInfo,
+    LastExams
 } from "../Components/Menu/SubComponents";
 import ExamList from "../Components/Menu/SubComponents/ExamList";
 const AdminRoutes = [
@@ -63,6 +64,10 @@ const UserRoutes = [
     {
         path: "/user/exam/add/:id",
         component: ExamModal,
+    },
+    {
+        path: "/user/exam/add/lastexams/:id",
+        component: LastExams,
     },
     {
         path: "/user/question/:id",

@@ -6,17 +6,10 @@ import { ViewItem } from "./SubComponents";
 
 export default function View(props: any) {
     const [data, setData] = useState(SubjectData);
-    const [isUpdate, setIsUpdate] = useState();
-    const route = "/admin/subject";
     return (
         <div className="view__wrap">
             <div
                 className="view"
-                // style={
-                //     props.id === 1 && props.isUpdate === false
-                //         ? { display: "block" }
-                //         : {}
-                // }
             >
                 <div className="view__title">Danh sách môn học</div>
                 <div className="view__bar"></div>
@@ -33,7 +26,6 @@ export default function View(props: any) {
                             <ViewItem
                                 item={item}
                                 key={index}
-                                // onClick={() => props.onClick(props.subject)}
                             />
                         );
                     })}

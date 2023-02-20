@@ -21,7 +21,15 @@ const getExamById = async (req, res, next) => {
     }
 };
 
-
+const getLastExam = async (req, res, next) => {
+    try {
+        const count = req.params.id;
+        const exams = await examServices.getLastExam(count);
+        res.send(exams);
+    } catch (err) {
+        res.status(404).send(err.message);
+    }
+};
 const getExamInfo = async (req, res, next) => {
     try {
         const examId = req.params.id;
@@ -68,5 +76,6 @@ module.exports = {
     createExam,
     getExamsWithCourseName,
     getExamInfo,
-    getExamWithCourseNameById
+    getExamWithCourseNameById,
+    getLastExam,
 };

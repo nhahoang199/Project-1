@@ -2,11 +2,6 @@ import React from "react";
 import "./index.scss";
 import { useState } from "react";
 import { NavData } from "../../DummyData";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faChevronDown,
-    faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 import { NavItem } from "./SubComponents";
 
 export default function Navigation(props: any) {

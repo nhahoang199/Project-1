@@ -22,28 +22,23 @@ export default function FormExam(props: any) {
     const [courseData, setCourseData] = useState<any>([]);
     const [chapterData, setChapterData] = useState<any[]>([]);
     const [chapterName, setChapterName] = useState("");
-    const [questionData, setQuestionData] = useState<any[]>([]);
     const [examType, setExamType] = useState("Giữa kỳ");
     const [reviewer, setReviewer] = useState("");
-    const [questionCount, setQuestionCount] = useState();
-    const [easyQuestionCount, setEasyQuestionCount] = useState();
-    const [mediumQuestionCount, setMediumQuestionCount] = useState();
-    const [hardQuestionCount, setHardQuestionCount] = useState();
     const [chapterParams, setChapterParams] = useState<any>({});
-    const [route, setRoute] = useState('');
 
     const navigate = useNavigate();
-    // const [chapterParamsArr, setChapterParamsArr] = useState<any[]>();
     let chapterParamsArr: any[] = [];
     useEffect(() => {
         getCourse("courses", "GET");
     }, []);
+    
     useEffect(() => {
         if(createdExamId !== 0) {
+            alert("Tạo đề thi thành công");
             let route = createdExamId.toString();
             navigate(route);
         }
-    }, [createdExamId]);
+    }, [createdExamId, navigate]);
     useEffect(() => {
         getChaptersOfCourse("chapters/&courseId=" + selectedCourse, "GET");
     }, [selectedCourse]);
@@ -63,43 +58,6 @@ export default function FormExam(props: any) {
         try {
             await callAPI(endpoint, method).then((res: any) => {
                 setChapterData(res.data);
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const getRandomQuestion = async (endpoint: string, method: string) => {
-        try {
-            return await callAPI(endpoint, method).then((res: any) => {
-                const data = res.data;
-                console.log(data);
-                Object.values(data).forEach((item) => console.log(item));
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const createExam = async (endpoint: string, method: string, body: any) => {
-        try {
-            return await callAPI(endpoint, method, body).then((res: any) => {
-                // setCreatedExamId(res.data[0].Id);
-                console.log(res.data[0].Id);
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const createExamQuestion = async (
-        endpoint: string,
-        method: string,
-        body: any
-    ) => {
-        try {
-            await callAPI(endpoint, method, body).then((res: any) => {
-                console.log(res.data[0].Id);
             });
         } catch (error) {
             console.log(error);
@@ -142,8 +100,6 @@ export default function FormExam(props: any) {
     };
 
     const handleChangeQuestionCount = (e: any, index: number) => {
-        // setQuestionCount(e.target.value);
-
         setChapterParams(() => {
             const newObject = { ...chapterParams };
 
@@ -157,10 +113,8 @@ export default function FormExam(props: any) {
     };
 
     const handleChangeEasyQuestionCount = (e: any, index: number) => {
-        // setEasyQuestionCount(e.target.value);
         setChapterParams(() => {
             const newObject = { ...chapterParams };
-            //     return newObject;
             newObject[`${index}`] = {
                 ...newObject[`${index}`],
                 chapterId: selectChapterId[index],
@@ -170,7 +124,6 @@ export default function FormExam(props: any) {
         });
     };
     const handleChangeMediumQuestionCount = (e: any, index: number) => {
-        // setMediumQuestionCount(e.target.value);
         setChapterParams(() => {
             const newObject = { ...chapterParams };
             newObject[`${index}`] = {
@@ -182,7 +135,6 @@ export default function FormExam(props: any) {
         });
     };
     const handleChangeHardQuestionCount = (e: any, index: number) => {
-        // setHardQuestionCount(e.target.value);
         setChapterParams(() => {
             const newObject = { ...chapterParams };
             newObject[`${index}`] = {
@@ -210,8 +162,6 @@ export default function FormExam(props: any) {
                 let examIdCreated = response.data[0].Id;
                 console.log(examIdCreated);
                 setCreatedExamId(examIdCreated);
-                // route = "user/exam/" + examIdCreated;
-                // setRoute("user/exam/" + examIdCreated);
                 Object.values(chapterParams).forEach(async (item: any) => {
                     const chapterId = item.chapterId;
                     const questionCount = item.questionCount;
@@ -295,23 +245,15 @@ export default function FormExam(props: any) {
                         });
                     }
                 });
-                // navigate(`/user/exam/${examIdCreated}`);
             }).then( () => {
                 console.log(createdExamId)
-                // navigate("/user/exam/" + createdExamId)
             }
                 
             );
         } catch (error) {
             console.log(error);
         }
-        //
-        // console.log(createdExamId);
-
-        // console.log(questionData);
     };
-
-    // let route = "user/exam/" + createdExamId;
 
     return (
         <div className="add-exam-wrap">

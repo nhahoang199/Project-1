@@ -7,6 +7,8 @@ import FormExam from "./FormCreateExam";
 import ExamQuestion from "./ExamQuestion";
 import ExamModal from "./ViewOnCreateSuccess";
 import QuestionInfo from "./QuestionInfo";
+import LastExams from "./LastExams";
+
 export {
     FormAdd,
     Search,
@@ -16,5 +18,6 @@ export {
     FormExam,
     ExamQuestion,
     ExamModal,
-    QuestionInfo
+    QuestionInfo,
+    LastExams,
 };

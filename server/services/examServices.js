@@ -31,6 +31,21 @@ const getExamById = async (examId) => {
     }
 };
 
+const getLastExam = async (count) => {
+    try {
+        const pool = await sql.connect(config.sql);
+        const sqlQueries = await utils.loadSqlQueries("exams");
+        const exams = await pool
+            .request()
+            .input("count", sql.Int, count)
+            .query(sqlQueries.getLastExam);
+        return exams.recordset;
+    } catch (err) {
+        console.log(err);
+        return err.message;
+    }
+};
+
 const getExamInfo = async (examId) => {
     try {
         const pool = await sql.connect(config.sql);
@@ -102,4 +117,5 @@ module.exports = {
     getExamsWithCourseName,
     getExamInfo,
     getExamWithCourseNameById,
+    getLastExam,
 };

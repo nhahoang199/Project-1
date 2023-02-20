@@ -1,5 +1,6 @@
 SELECT [Exam].[Id]
-	  ,[Course].[CourseName]
+      ,[CourseId]
+	,[Course].[CourseName]
       ,[ExamName]
       ,[ExamType]
       ,[DayCreate]

@@ -3,13 +3,31 @@ import { useParams } from "react-router-dom";
 import callAPI from "../../../../Services/api";
 import { ButtonBack } from "../Common";
 import { ExamItem } from "../ExamList/SubComponents";
+import { MixinButton, MixModal } from "./SubComponents";
 import "./index.scss";
 
 export default function ExamModal(props: any) {
     const [data, setData] = useState<any[]>([]);
+    const [questionData, setQuestionData] = useState<any[]>([]);
+    const [isOpenModal, setIsOpenModal] = useState(false);
     const { id } = useParams();
     console.log(id);
 
+    useEffect(() => {
+        getExamData("examWithCourseNameById/" + id, "GET");
+        getQuestion("questionsOfExam/" + id, "GET");
+    }, []);
+
+    const getQuestion = async (endpoint: string, method: string) => {
+        try {
+            await callAPI(endpoint, method).then((response: any) => {
+                console.log(response.data)
+                setQuestionData(response.data);
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    };
     const getExamData = async (endpoint: string, method: string) => {
         try {
             await callAPI(endpoint, method).then((response: any) => {
@@ -19,12 +37,21 @@ export default function ExamModal(props: any) {
             console.log(err);
         }
     };
+    const hanldeClickMixinButton = () => {
+        setIsOpenModal(true);
+    };
+    const hanldeClickClose = () => {
+        setIsOpenModal(false);
+    };
 
-    useEffect(() => {
-        getExamData("examWithCourseNameById/" + id, "GET");
-    }, []);
     return (
         <div className="examModal__wrap">
+            <MixModal
+                isOpenModal={isOpenModal}
+                onClick={hanldeClickClose}
+                examData={data}
+                questionData ={questionData}
+            />
             <div className="examModal">
                 <div className="examModal__title">Tạo đề thi thành công</div>
                 <div className="examModal__bar"></div>
@@ -45,6 +72,7 @@ export default function ExamModal(props: any) {
             </div>
             <div className="examlist__button">
                 <ButtonBack />
+                <MixinButton onClick={hanldeClickMixinButton} />
             </div>
         </div>
     );

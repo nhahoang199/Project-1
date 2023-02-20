@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { QuestionsData } from "../../../../DummyData";
 import callAPI from "../../../../Services/api";
 import { useParams } from "react-router-dom";
-import { SubmitButton, QuestionItem } from "./SubComponents";
+import { QuestionItem } from "./SubComponents";
 import { ButtonBack } from "../Common";
 
 export default function ExamQuestion(props: any) {
@@ -11,6 +11,7 @@ export default function ExamQuestion(props: any) {
     const [examInfo, setExamInfo] = useState<any>([]);
 
     const { id } = useParams();
+    
     const getExamInfo = async (endpoint: string, method: string) => {
         try {
             await callAPI(endpoint, method).then((response: any) => {

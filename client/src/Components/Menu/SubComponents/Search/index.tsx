@@ -12,10 +12,7 @@ import {
 } from "./SubComponents";
 import {
     faMagnifyingGlass,
-    faCalendarDays,
-    faTriangleExclamation,
     faCircleXmark,
-    faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { SubjectData } from "../../../../DummyData";
 

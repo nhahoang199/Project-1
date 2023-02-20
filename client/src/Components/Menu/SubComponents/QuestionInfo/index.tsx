@@ -17,7 +17,6 @@ export default function QuestionInfo(props: any) {
     const [questionData, setQuestionData] = useState<any>({});
     const { id } = useParams();
 
-    
     const getQuestionById = async (endpoint: string, method: string) => {
         try {
             await callAPI(endpoint, method).then((res: any) => {

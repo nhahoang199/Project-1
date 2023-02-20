@@ -2,13 +2,10 @@ import "./index.scss";
 
 import { ButtonBack } from "../Common";
 import { useEffect, useState } from "react";
-import { ExamData } from "../../../../DummyData";
 import { ExamItem } from "./SubComponents";
 import callAPI from "../../../../Services/api";
-import { AxiosResponse } from "axios";
 
 export default function ExamList(props: any) {
-    const [isUpdate, setIsUpdate] = useState();
     const [data, setData] = useState([]);
 
     const getExamData = async (endpoint: string, method: string) => {
